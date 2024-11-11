@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+    <h1><%= restaurant.name %></h1> <!--access "name" in "RESTAURANT" in js-->
+    <p><%= restaurant.address %></p> 
+    <p><%= restaurant.phone %></p>
+    <p>
+        <% if(restaurant.isOpen === true) { %> <!--have to put scriptlet tags at beginning and end of every line-->
+            <p>Yes we are open!</p>
+        <% } else { %>
+            <p>Sorry, we are closed.</p>
+        <% } %>
+    </p>
+</body>
+</html>

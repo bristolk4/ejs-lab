@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+    <h1>Full Menu</h1>
+    <h2 style="text-decoration:underline">Mains</h2>
+<!--put scriplet tags inside of the html tags. so this cycles through each menu item,
+checks if it's a main, side, or dessert, then accesses the data in the array depending
+on what the category is. also underline h2s/categories to be FANCY-->
+        <% menu.forEach(item => { %>           
+            <% if (item.category === 'mains') { %>    
+            <h3><%= item.name %></h3>
+            <p>$<%= item.price %></p>
+            <p>Rated a <%= item.rating %> out of 5</p>
+            <p><%= item.details %></p>
+            <% } %>
+        <% }); %>
+
+    <h2 style="text-decoration:underline">Sides</h2>
+        <% menu.forEach(item => { %>            
+            <% if (item.category === 'sides') { %>  
+            <h3><%= item.name %></h3>
+            <p>$<%= item.price %></p>
+            <p>Rated a <%= item.rating %> out of 5</p>
+            <p><%= item.details %></p>
+            <% } %>
+        <% }); %>
+
+    <h2 style="text-decoration:underline">Desserts</h2>
+        <% menu.forEach(item => { %>            
+            <% if (item.category === 'desserts') { %>  
+            <h3><%= item.name %></h3>
+            <p>$<%= item.price %></p>
+            <p>Rated a <%= item.rating %> out of 5</p>
+            <p><%= item.details %></p>
+            <% } %>
+        <% }); %>
+</body>
+</html>
